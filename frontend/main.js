@@ -78,7 +78,7 @@ $(document).ready(function(){
                 getAllFeatures(data);
             },
             error: function() {
-                alert('Error Loading Data');
+                alert('Error Ordering Data');
             }
         });
     });
@@ -94,7 +94,7 @@ $(document).ready(function(){
                 getAllFeatures(data);
             },
             error: function() {
-                alert('Error Loading Data');
+                alert('Error Ordering Data');
             }
         });
     });
@@ -110,7 +110,7 @@ $(document).ready(function(){
                 getAllFeatures(data);
             },
             error: function() {
-                alert('Error Loading Data');
+                alert('Error Ordering Data');
             }
         });
     });
@@ -128,7 +128,7 @@ $(document).ready(function(){
                 });
             },
             error: function() {
-                alert('Error Loading Data');
+                alert('Error Deleting Data');
             }
         });
     });
@@ -143,7 +143,7 @@ $(document).ready(function(){
                 $('#complete_tr' + data.id ).html('Done');
             },
             error: function() {
-                alert('Error Loading Data');
+                alert('Error Updating Data');
             }
         });
     });
@@ -201,7 +201,7 @@ $(document).ready(function(){
                 $('#product_area' + id.trim()).html(product_area);
             },
             error: function() {
-                alert("Error Adding Data");
+                alert("Error Updating Data");
             }
         });
         $('#editFeaturesRequest').modal('hide')
