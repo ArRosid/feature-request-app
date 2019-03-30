@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from datetime import datetime
+from dateutil import parser
 from flask_marshmallow import Marshmallow
 from flask_cors import CORS
 
@@ -30,9 +30,8 @@ def add_feature():
     target_date = request.json['target_date']
     product_area = request.json['product_area']
     
-    # format date
-    format_date = "%m/%d/%Y"
-    target_date = (datetime.strptime(target_date, format_date)).date()
+
+    target_date = parser.parse(target_date)
 
     # Replace priority
     all_features = Features.query.order_by(Features.priority).filter_by(client=client).all()
@@ -86,14 +85,9 @@ def update_feature(id):
     target_date = request.json['target_date']
     product_area = request.json['product_area']
 
-    # format date
-    try:
-        format_date = "%Y-%m-%d"
-        target_date = (datetime.strptime(target_date, format_date)).date()
-    except:
-        format_date = "%m/%d/%Y"
-        target_date = (datetime.strptime(target_date, format_date)).date()
-    
+
+    target_date = parser.parse(target_date)
+
     feature.title = title
     feature.description = description
     feature.client = client
