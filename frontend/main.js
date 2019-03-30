@@ -27,7 +27,7 @@ $(document).ready(function(){
     // Get Features
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:5000/feature',
+        url: 'http://backend:5000/feature',
         success: function(data) {
             getAllFeatures(data);
         },
@@ -50,7 +50,7 @@ $(document).ready(function(){
         const data = JSON.stringify({'title':title, 'description':description, 'client':client, 'priority':priority, 'target_date':target_date, 'product_area':product_area})
 
         $.ajax({
-            url: 'http://localhost:5000/feature',
+            url: 'http://backend:5000/feature',
             dataType: 'json',
             type: "POST",
             contentType: 'application/json',
@@ -73,7 +73,7 @@ $(document).ready(function(){
     $("#sortClient").click(function(e){
         $.ajax({
             type: 'GET',
-            url: 'http://localhost:5000/feature/order?by=' + e.currentTarget.className,
+            url: 'http://backend:5000/feature/order?by=' + e.currentTarget.className,
             success: function(data) {
                 getAllFeatures(data);
             },
@@ -89,7 +89,7 @@ $(document).ready(function(){
     $("#sortPriority").click(function(e){
         $.ajax({
             type: 'GET',
-            url: 'http://localhost:5000/feature/order?by=' + e.currentTarget.className,
+            url: 'http://backend:5000/feature/order?by=' + e.currentTarget.className,
             success: function(data) {
                 getAllFeatures(data);
             },
@@ -105,7 +105,7 @@ $(document).ready(function(){
     $("#sortId").click(function(e){
         $.ajax({
             type: 'GET',
-            url: 'http://localhost:5000/feature/order?by=' + e.currentTarget.className,
+            url: 'http://backend:5000/feature/order?by=' + e.currentTarget.className,
             success: function(data) {
                 getAllFeatures(data);
             },
@@ -121,7 +121,7 @@ $(document).ready(function(){
         console.log(f);
         $.ajax({
             type: 'DELETE',
-            url: 'http://localhost:5000/feature/' + e.currentTarget.id,
+            url: 'http://backend:5000/feature/' + e.currentTarget.id,
             success: function(data){
                 f.fadeOut(300, function(){
                     f.remove();
@@ -138,7 +138,7 @@ $(document).ready(function(){
         const f = $(this).closest("tr");
         $.ajax({
             type: 'PUT',
-            url: 'http://localhost:5000/feature/' + e.currentTarget.id + '/complete',
+            url: 'http://backend:5000/feature/' + e.currentTarget.id + '/complete',
             success: function(data){
                 $('#complete_tr' + data.id ).html('Done');
             },
@@ -186,7 +186,7 @@ $(document).ready(function(){
         const data = JSON.stringify({'title':title, 'description':description, 'client':client, 'priority':priority, 'target_date':target_date, 'product_area':product_area})
 
         $.ajax({
-            url: 'http://localhost:5000/feature/' + id,
+            url: 'http://backend:5000/feature/' + id,
             dataType: 'json',
             type: "PUT",
             contentType: 'application/json',
