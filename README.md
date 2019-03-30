@@ -17,5 +17,5 @@ In this application, I using Docker to deploy to the server. So we can deploy fa
   <li>Clone this project and cd to the directory</li>
   <li>Simply run <b>sudo docker-compose up --build -d</b> and you will get this application run on your system</li>
   <li>To make sure that you have this application running on your system, run <b>sudo docker ps</b>, you will see that you have two container, one for backend & one for frontend</li>
-  <li>Open your favorite browser and navigate to http://<your_ip>, you will see the application running. Congratulation!</li>
+  <li>Open your favorite browser and navigate to http://your_ip, you will see the application running. Congratulation!</li>
 </ol>
